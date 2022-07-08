@@ -1,36 +1,18 @@
-import { useState } from 'react'
+import React, {useState} from 'react'
 
-const handleReset = () => window.location.reload()
-
-export const Search= ({searchTerm }) =>{
-
-    const [inputValue,setInputValue] = useState('');
-
-    const handleInputChange = ({ target }) =>{
-        setInputValue(target.value);
-        
-    }
-    
+export const Search = ({searchText})=>{
+    //const [term, setTerm] = useState([])
+    const [text, setText] = useState('');
     const handleSubmit = (e)=>{
-        e.preventDefault();
-        if(inputValue.trim().length < 3) return;
-        
-        searchTerm(inputValue.trim());
-        setInputValue('');
+        e.preventDefault()
+        searchText(text)
     }
-
     return(
-        <>
-        <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                placeholder='Buscar Noticia'
-                onChange={handleInputChange}
-                
-            />
-        </form>
-        <button className="button-30" role="button" onClick={handleReset}>Reset</button>
-
-        </>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder='Ejemplo: politics' onChange={(e)=>setText(e.target.value)}/>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
     )
 }

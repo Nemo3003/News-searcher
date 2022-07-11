@@ -2,9 +2,9 @@
 //Here the API is being called
 export const getNews = async (searchTerm) =>{
 
-    const API_KEY = '72e623b2c937460795bee83bda1b9db9';
+  const API_KEY = '72e623b2c937460795bee83bda1b9db9';
   
-    const url = `https://newsapi.org/v2/everything?q=keyword&apiKey=${API_KEY}`;
+  const url = `https://newsapi.org/v2/everything?q=${category}&country=ar&apiKey=${API_KEY}`;
   
     const resp = await fetch(url);
   

@@ -1,1 +1,3 @@
-# react-final-informatorio
+# [TPI] INFORMATORIO 2022 - REACT JS
+
+ULISES MARIANO MELGAREJO
